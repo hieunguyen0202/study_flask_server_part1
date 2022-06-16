@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+</head>
+<body>
+    <h1>Day la trang chu</h1>
+    <h1>{{ massage }}</h1>
+   <!-- TRuyen ra binh thuong de hien thi bieu thuc -->
+
+    <h3>Day la phuong thuc binh thuong {{ users1 }}</h3> 
+
+    <!-- Truyen ra bang code, thuc thi mot cai lenh -->
+    <ul>
+        {% for u in users1 %}
+        <li>{{ u.name }} - {{ u.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <!-- tim kiem ten -->
+    <!-- Thuoc tinh "action" chỉ định cái nơi trên sever để gửi cái này lên -->
+    <form method="get" action="/">
+        <input type="text" name="keyword" placeholder="Nhap tu khoa de tim...">
+        <input type="submit" value="Tim kiem">
+    </form>
+
+
+    <!-- Truyền theo phương thức post param , tạo một form đăng nhập -->
+    <!-- chú ý phần thuộc tính name -->
+    <form method="post" action="/login">
+        <input type="text" name="username" id="" placeholder="Nhập username...">
+        <input type="password" name="password" placeholder="Moi bạn nhập password..." >
+        <input type="submit" value="Đăng nhập">
+    </form>
+
+
+    <!-- Tạo form cho người dùng upload tập tin -->
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="avatar">
+        <input type="submit" value="UPLOAD">
+        
+    </form>
+
+</body>
+</html>
