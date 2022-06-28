@@ -43,7 +43,7 @@ def test():
 def hello(name):
     return render_template("index.html", massage="XIN CHAO %d !!! " % name)
 
-
+# chao em yeu 123
 ##get param
 @app.route("/hello2")
 def hello2():
